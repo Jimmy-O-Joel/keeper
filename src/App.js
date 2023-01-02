@@ -1,24 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css"
+import "./components/Header"
+import Header from './components/Header';
+import AddNote from './components/AddNote';
+import Note from './components/Note';
+import Footer from './components/Footer';
+import { ProductConsumer } from './context';
 
-function App() {
+
+const App =()=>{
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <ProductConsumer>
+
+    {(value)=>{
+      const {data} = value
+      return(
+        <div className="App">
+          <Header/>
+          <AddNote/>
+          <div className='container'>
+            <div className='row'>
+
+              {data.map((note, index)=>{
+                const {_id:noteID, title, content} = note
+                return <Note key={noteID} id={noteID} title={title} content={content}/>
+              })}
+            </div>
+
+          </div>
+      
+      <Footer />
     </div>
+      )
+    }}
+
+    
+    </ProductConsumer>
   );
 }
 
