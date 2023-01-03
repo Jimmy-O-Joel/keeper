@@ -73,6 +73,7 @@ form button {
 }
 
 .note h1 {
+  font-weight: bold;
   font-size: 1.1em;
   margin-bottom: 6px;
 }
