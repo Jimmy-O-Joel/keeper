@@ -6,7 +6,7 @@
 
 }
 
-header {
+.container-fluid {
   background-color: var(--mainColor);
   align-items: left;
   text-align: left;
