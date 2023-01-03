@@ -10,7 +10,7 @@ const ProductProvider = (props) => {
     const [data, setData] = useState([])
 
     const getData = ()=>{
-      axios.get("/api/notes")
+      axios.get("https://thoughtskeeper.onrender.com/api/notes")
       .then(response => {
         // do something with the response data
         const {notes} = response.data
@@ -35,7 +35,7 @@ const ProductProvider = (props) => {
 
   const deleteEntry = (id)=>{
 
-    axios.delete(`/api/notes/${id}`)
+    axios.delete(`https://thoughtskeeper.onrender.com/api/notes/${id}`)
       .then(response => {
         // do something with the response data
         

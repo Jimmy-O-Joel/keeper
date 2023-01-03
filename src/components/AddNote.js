@@ -38,7 +38,7 @@ export default function AddNote(props) {
                         e.preventDefault()
 
                       try {
-                        await axios.post("/api/notes", userInput)
+                        await axios.post("https://thoughtskeeper.onrender.com/api/notes", userInput)
                       } catch (error) {
                         console.log(error)
                       }
