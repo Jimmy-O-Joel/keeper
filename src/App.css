@@ -6,12 +6,26 @@
 
 }
 
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 300;
+}
+
+.content {
+  padding-top: 300px;
+  overflow: hidden;
+  z-index: 0;
+}
+
 .container-fluid {
   background-color: var(--mainColor);
   align-items: left;
   text-align: left;
   color: white;
-  padding-left: 2rem;
+  padding: 10px 16px;
   
   
 }
@@ -91,4 +105,8 @@ footer {
   width: 100%;
   position: fixed;
   height: 2.5rem;
+}
+
+.noteArea {
+  background-color: white;
 }

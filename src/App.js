@@ -18,8 +18,13 @@ const App =()=>{
       const {data} = value
       return(
         <div className="App">
+        <div className='sticky'>
           <Header/>
           <AddNote/>
+        </div>
+
+        <div className='content'>
+
           <div className='container'>
             <div className='row'>
 
@@ -32,6 +37,7 @@ const App =()=>{
           </div>
       
       <Footer />
+        </div>
     </div>
       )
     }}
