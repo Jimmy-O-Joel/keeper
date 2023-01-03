@@ -11,7 +11,7 @@ export default function Note(props) {
         const {deleteEntry} = value
 
         return(
-          <div className='note col col-lg-2'>
+          <div className='note col-9 col-md-6 col-lg-3'>
 
 
             <h1>{props.title}</h1>
