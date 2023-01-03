@@ -32,11 +32,17 @@
 
 form {
   position: relative;
-  width: 25rem;
+  width: 30rem;
   margin: 30px auto;
   padding: 15px;
   border-radius: 15px;
   box-shadow: 0 1px 5px rgb(138, 137, 137)
+}
+
+@media screen and (max-width: 1000px) {
+  form {
+    width: 20rem
+  }
 }
 
 form input, 
