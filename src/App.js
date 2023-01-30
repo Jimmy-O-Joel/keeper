@@ -1,48 +1,28 @@
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"
-import "./components/Header"
-import Header from './components/Header';
-import AddNote from './components/AddNote';
-import Note from './components/Note';
-import Footer from './components/Footer';
+import {Routes, Route, Navigate} from "react-router-dom"
+import Homepage from './components/homepage/Homepage';
+import Login from './components/login/Login';
+import Footer from './components/homepage/Footer';
 import { ProductConsumer } from './context';
 
 
 const App =()=>{
 
   return (
-
     <ProductConsumer>
 
-    {(value)=>{
-      const {data} = value
-      return(
-        <div className="App">
-        <div className='sticky'>
-          <Header/>
-          <AddNote/>
-        </div>
-
-        <div className='content'>
-
-          <div className='container'>
-            <div className='row'>
-
-              {data.map((note, index)=>{
-                const {_id:noteID, title, content} = note
-                return <Note key={noteID} id={noteID} title={title} content={content}/>
-              })}
-            </div>
-
-          </div>
-      
-      <Footer />
-        </div>
-    </div>
-      )
-    }}
-
-    
+      {(value)=>{
+        const {isAuthenticated} = value
+          return(
+          <div className="App">
+            <Routes>
+              <Route path='/' element={<Login />}/>
+              <Route path='/home' element={isAuthenticated? <Homepage/> : <Navigate to="/" />}/>
+            </Routes>
+            <Footer />
+          </div>)
+      }}
     </ProductConsumer>
   );
 }

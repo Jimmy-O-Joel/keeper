@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --mainColor: #344D67
+    --mainColor: #344D67;
+    --borderColor: #0081C9;
 
 }
 
@@ -30,7 +31,7 @@
   
 }
 
-form {
+.noteArea {
   position: relative;
   width: 30rem;
   margin: 30px auto;
@@ -40,13 +41,13 @@ form {
 }
 
 @media screen and (max-width: 1000px) {
-  form {
+  .noteArea {
     width: 20rem
   }
 }
 
-form input, 
-form textarea {
+.noteArea input, 
+.noteArea textarea {
   width: 100%;
   border: none;
   outline: none;
@@ -55,7 +56,7 @@ form textarea {
 
 }
 
-.note button {
+.deleteIcon {
   position: absolute;
   right: 10px;
   border: none;
@@ -67,7 +68,8 @@ form textarea {
   bottom: 10px;
 
 }
-form button {
+
+.noteArea button {
   position: absolute;
   right: 18px;
   bottom: -18px;
@@ -115,4 +117,49 @@ footer {
 
 .noteArea {
   background-color: white;
+}
+
+.login-form {
+  margin: 150px auto 0;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+  border-radius: 5px;
+
+}
+
+.login-form input {
+  display: block;
+  width: 300px;
+  margin:20px auto 20px;
+  height: 20px;
+  padding: 15px 0;
+  font-size: 18px;
+  border: 0.15rem solid var(--borderColor);
+  outline: none;  
+}
+
+.login-form i {
+  color: var(--mainColor);
+  font-size: 50px;
+  margin: 20px;
+}
+
+.login-form button {
+  margin-bottom: 20px;
+}
+
+.login-form p{
+  display: inline;
+}
+
+.error {
+  color: red;
+  padding-top: 0;
+
+}
+
+.login-form i {
+  display: block;
+  padding-top: 10px;
 }
