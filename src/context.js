@@ -24,7 +24,7 @@ const ProductProvider = (props) => {
 
       if (password === confirm) {
 
-          axios.post("http://localhost:5000/api/auth/register", userDetails)
+          axios.post("https://thoughtskeeper.onrender.com/api/auth/register", userDetails)
           .then(response=> {
               setLoggedIn(response.data)
               navigate("/home")
@@ -42,7 +42,7 @@ const ProductProvider = (props) => {
 
     const login = async (userDetails, navigate)=> {
 
-      axios.post("http://localhost:5000/api/auth/login", userDetails)
+      axios.post("https://thoughtskeeper.onrender.com/api/auth/login", userDetails)
       .then(response=> {
           setLoggedIn(response.data)
           navigate("/home")
@@ -56,7 +56,7 @@ const ProductProvider = (props) => {
 
     const getData = ()=>{
       
-      axios.get("http://localhost:5000/api/notes", {
+      axios.get("https://thoughtskeeper.onrender.com/api/notes", {
         headers: headers
       })
       .then(response => {
@@ -88,7 +88,7 @@ const ProductProvider = (props) => {
 
     const {_id: userID} = loggedIn.user
 
-    axios.delete(`http://localhost:5000/api/notes/${id}/${userID}`, {
+    axios.delete(`https://thoughtskeeper.onrender.com/notes/${id}/${userID}`, {
       headers: headers
     })
       .then(response => {
@@ -106,7 +106,7 @@ const ProductProvider = (props) => {
     const patchLike = (postId)=>{
       const {_id: userID} = loggedIn.user
 
-      axios.patch(`http://localhost:5000/api/notes/${postId}/like`, { userId: userID},{
+      axios.patch(`https://thoughtskeeper.onrender.com/api/notes/${postId}/like`, { userId: userID},{
         headers: headers
       }).then(response => {
         //do something with response

@@ -49,7 +49,7 @@ export default function AddNote(props) {
                         const headers = {
                           "Authorization": `Bearer ${token}`
                         }
-                        await axios.post("http://localhost:5000/api/notes", {
+                        await axios.post("https://thoughtskeeper.onrender.com/api/notes", {
                           ...userInput,
                           userId: _id
                         }, {
